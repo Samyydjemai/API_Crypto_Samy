@@ -1,0 +1,77 @@
+﻿<Window x:Class="API_Crypto_Samy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:API_Crypto_Samy"
+        mc:Ignorable="d"
+       Title="Convertisseur de Cryptomonnaies" Height="450" Width="800"
+        Background="#1E1E1E">
+    <Grid Margin="20">
+        <!-- Titre -->
+        <TextBlock Text="Convertissez et échangez"
+                   HorizontalAlignment="Center" VerticalAlignment="Top"
+                   FontSize="24" Foreground="White" Margin="0,10,0,0"
+                   FontWeight="Bold"/>
+        <TextBlock Text="Testez le nouveau convertisseur Rapide et Dynamique"
+                   HorizontalAlignment="Center" VerticalAlignment="Top"
+                   FontSize="14" Foreground="Gray" Margin="0,50,0,0"/>
+
+        <!-- Zone centrale -->
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ComboBox "De" -->
+            <TextBox Grid.Column="0" Width="80" Height="40" FontSize="16" 
+                     VerticalAlignment="Center" HorizontalAlignment="Left"
+                     Background="#2E2E2E" Foreground="White" BorderBrush="#444444"
+                     BorderThickness="1" Text="1" TextAlignment="Center" Margin="10,0,0,0"/>
+
+            <ComboBox Grid.Column="0" Width="80" Height="40" FontSize="16" 
+                      VerticalAlignment="Center" HorizontalAlignment="Center"
+                      Margin="90,0,0,0" Name="CryptoSelector" Background="#2E2E2E"
+                      Foreground="#FF3A86FF" BorderBrush="#444444" BorderThickness="1">
+                <ComboBoxItem Content="BTC" IsSelected="True"/>
+                <ComboBoxItem Content="ETH"/>
+                <ComboBoxItem Content="DOGE"/>
+            </ComboBox>
+
+            <!-- Flèche entre ComboBox -->
+            <TextBlock Grid.Column="1" Text="→"
+                       FontSize="24" Foreground="Gray"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+            <!-- ComboBox "Vers" -->
+            <ComboBox Grid.Column="2" Width="80" Height="40" FontSize="16"
+                      VerticalAlignment="Center" HorizontalAlignment="Center"
+                      Background="#2E2E2E" Foreground="#FF3A86FF" BorderBrush="#444444"
+                      BorderThickness="1" Name="CurrencySelector">
+                <ComboBoxItem Content="USD" IsSelected="True"/>
+                <ComboBoxItem Content="EUR"/>
+                <ComboBoxItem Content="GBP"/>
+            </ComboBox>
+
+            <!-- Résultat à droite -->
+            <TextBlock Grid.Column="3" Text="96474.15"
+                       FontSize="16" FontWeight="Bold" Foreground="White"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="10,0,0,0"/>
+        </Grid>
+
+        <!-- Bouton Convertir -->
+        <Button Content="Convertir"
+                HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                Width="120" Height="40" FontSize="16" FontWeight="Bold"
+                Background="#3A86FF" Foreground="White" BorderThickness="0"
+                Margin="0,0,0,20"
+                Cursor="Hand"/>
+        <TextBlock Text="By Samy et Yanis"
+            HorizontalAlignment="Left" VerticalAlignment="Bottom"
+            FontSize="12" Foreground="Gray" Margin="0,50,0,0"/>
+    </Grid>
+</Window>
